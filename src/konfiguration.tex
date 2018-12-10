@@ -1,0 +1,136 @@
+%!TEX root = ../konzeptpapier.tex
+
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{xspace}
+\usepackage{graphicx}
+\usepackage{color}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% In diesem Abschnitt gibst du deine persönlichen Daten sowie den Kontext deiner Arbeit an
+% das \xspace am Ende der Einträge muss vorhanden bleiben. Es regelt das Whitespace-
+% handling
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% persönliche Daten
+\newcommand{\vorname}{Hier dein Vorname\xspace}
+\newcommand{\nachname}{Hier dein Nachname\xspace}
+\newcommand{\emailadresse}{Hier deine Mailadresse\xspace}
+\newcommand{\matrikelnummer}{Hier deine Matrikelnummer\xspace}
+
+
+% Arbeitsspezifische Daten
+\newcommand{\titel}{Konzeptpapier Multimediaprodukt\xspace}
+\newcommand{\untertitel}{Hier der Untertitel der Arbeit\xspace}
+\newcommand{\modulname}{Hier der Modulname\xspace}
+\newcommand{\pruefer}{Hier der vollständige Name des Prüfers\xspace}
+\newcommand{\semester}{Das Semester\xspace}
+\newcommand{\ortderarbeit}{Hier der Ort für die Erklärung der Selsbtständigkeit\xspace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Hurenkinder uns Schusterjungen
+\clubpenalty10000
+\widowpenalty10000
+\displaywidowpenalty=10000
+
+\usepackage{hyperxmp} % XMP-Daten fuer die PDF-Datei
+%Gimmmick: Linked Kapitel und Inhaltsverzeichnis, sowie Referenzen
+\usepackage[pdftex, pdfa]{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black,
+    pdftitle = {\titel},
+    pdfauthor = {\vorname \nachname},
+    pdfsubject = {\untertitel},
+    pdfkeywords = {\titel \untertitel \matrikelnummer},
+    pdflang = de,
+    bookmarks = true,
+    pdfdisplaydoctitle = true,
+    colorlinks = true,
+    plainpages = false,
+    %allcolors = black,
+    hypertexnames = false,
+    pdfpagelabels = true,
+    hyperindex = true,
+    unicode = true,
+    pdfcaptionwriter = {\textsl{\vorname \nachname}},
+    pdfcontactaddress = {Eine Straße. 9},
+    pdfcontactcity = {EinOrt},
+    pdfcontactpostcode = {EinePostleitzahl},
+    pdfcontactcountry = {Deutschland},
+    pdfcontactregion = {EinBundesland},
+    pdfcontactemail = {\emailadresse},
+    pdfcontactphone = {EineTelefonnummer},
+    pdfcontacturl = {http://www.hs-fulda.de},
+    pdfmetalang = {de},
+}
+
+\usepackage{prettyref}
+\usepackage{titleref}
+
+%Schriftart
+\usepackage{lmodern}
+\usepackage{mathptmx}
+\usepackage[scaled=.90]{helvet}
+
+\usepackage{courier}
+%Inhaltsverzeichnis
+\usepackage[tocgraduated]{tocstyle}
+\usetocstyle{allwithdot}
+\setcounter{tocdepth}{3}
+
+% Formatierungshilfen: http://wwws.htwk-leipzig.de/~myagovki/latex/formatierungshilfen/
+
+\usepackage[ddmmyyyy]{datetime}
+\renewcommand{\dateseparator}{.}
+
+% Für Kopf und Fußzeile: https://esc-now.de/_/latex-individuelle-kopf--und-fusszeilen/?lang=en
+\usepackage[
+  headsepline, plainheadsepline,
+  footsepline, plainfootsepline
+]{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\clearscrheadfoot
+
+\ihead*{\titel}
+\ohead*{\vorname\:\nachname}
+\ifoot*{\modulname}
+\ofoot*{\pagemark}
+\AtEndDocument{\ofoot{}}
+
+% anderthalbfacher Zeilenabstand
+\usepackage[onehalfspacing]{setspace}
+
+%Geometry der Seite festlegen
+\usepackage{geometry}
+\geometry{
+  left=2.5cm,
+  right=5cm,
+  top=2.5cm,
+  bottom=2cm,
+  headheight=33pt
+}
+
+%Für Gestaltung des Layouts
+\usepackage{blindtext}
+
+
+%Bilbliothek und Literatur einbinden
+
+\usepackage[style=authoryear-ibid,natbib=true,backend=biber,sorting=nty,hyperref=true]{biblatex}
+\usepackage[babel,german=guillemets]{csquotes}
+\addbibresource{bib/literatur.bib}
+
+
+\newcommand{\zb}{z.\,B.\xspace}
+
+
+
+
